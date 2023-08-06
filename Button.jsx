@@ -1,24 +1,33 @@
-function Button({ text, color, fontSize }) {
-    const buttonStyle = {
-      color: color,
-      fontSize: fontSize + "px"
-    };
-  
-    return <button style={buttonStyle}>{text}</button>;
+function Button({text, color, bg, fs}) {
+  const buttonStyle = {
+    color : color,
+    backgroundColor : bg,
+    fontSize: fs + 'px',
+    borderRadius : 5,
+    border : 0,
+    padding : 5
   }
-  
-  Button.defaultProps = {
-    text: "Click Me!",
-    color: "blue",
-    fontSize: 12
-  };
-  
-  export default function App() {
-    return (
-      <div>
-        <Button />
-        <Button text="Don't Click Me!" color="red" />
-        <Button fontSize={20} />
-      </div>
-    );
-  }
+
+  return (
+    <button style={buttonStyle}>{text}</button>
+  )
+}
+
+Button.defaultProps = {
+  text : "Click",
+  color : 'white',
+  bg: 'black',
+  fs : 20,
+}
+
+
+function App() {
+  return (
+    <div>
+      <Button text='Click Me!' color='red'/>
+      <Button text='Don"t Click Me!' color='blue'/>
+      <Button text='HELLO!' bg='black' color='white'/>
+    </div>
+
+  )
+}
